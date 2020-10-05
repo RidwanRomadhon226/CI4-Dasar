@@ -24,6 +24,23 @@
   <?= $this->include('layouts/footer') ?>
 
 
+  <script>
+    function previewImg() {
+      const sampul = document.querySelector('#sampul');
+      const sampulLable = document.querySelector('.custom-file-sampul')
+      const imgPreview = document.querySelector('.img-preview');
+
+      sampulLable.textContent = sampul.files[0].name;
+
+      const fileSampul = new FileReader();
+      fileSampul.readAsDataURL(sampul.files[0]);
+
+      fileSampul.onload = function(e) {
+        imgPreview.src = e.target.result;
+      }
+    }
+  </script>
+
 
 
   <!-- Optional JavaScript -->
