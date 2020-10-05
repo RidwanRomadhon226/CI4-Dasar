@@ -15,6 +15,7 @@ namespace App\Controllers;
  * @package CodeIgniter
  */
 
+use App\Models\KomikModel;
 use CodeIgniter\Controller;
 
 class BaseController extends Controller
@@ -42,5 +43,7 @@ class BaseController extends Controller
     //--------------------------------------------------------------------
     // E.g.:
     // $this->session = \Config\Services::session();
+    $this->komikModel = new KomikModel();
+    session();
   }
 }

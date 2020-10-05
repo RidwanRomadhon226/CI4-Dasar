@@ -34,6 +34,15 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Pages::index');
 $routes->get('/contact', 'Contact::index');
 
+//Komik
+$routes->get('/komik', 'Komik::index');
+$routes->post('/komik/save', 'Komik::saveKomik');
+$routes->delete('/komik/del/(:num)', 'Komik::delete/$1');
+$routes->get('/komik/create', 'Komik::addKomik');
+$routes->get('/komik/(:segment)', 'Komik::detailKomik/$1');
+$routes->get('/komik/edit/(:segment)', 'Komik::editKomik/$1');
+$routes->post('/komik/update/(:segment)', 'Komik::updateKomik/$1');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
